@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="7403d6e837fa4f888d931a0cd4a4287b" Name="Diagram1">
+        <EntityTypeShape EntityType="FamilyTreeModel.Persona" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="FamilyTreeModel.Relationship" Width="1.5" PointX="0.75" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="FamilyTreeModel.Relative" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <AssociationConnector Association="FamilyTreeModel.FK__Relative__Person__276EDEB3" ManuallyRouted="false" />
+        <AssociationConnector Association="FamilyTreeModel.FK__Relative__Relati__286302EC" ManuallyRouted="false" />
+        <AssociationConnector Association="FamilyTreeModel.FK__Relative__Relati__34C8D9D1" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

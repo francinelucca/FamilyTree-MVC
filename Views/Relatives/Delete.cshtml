@@ -1,0 +1,48 @@
+﻿@model FamilyTree2.DATA.Relative
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Relative</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayName("Persona")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Persona.fullName)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Relative")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RelatedTo.fullName)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Relationship")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Relationship.Relationship1)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Details", "Personas" , new { id = Model.PersonaId }, null)
+        </div>
+    }
+</div>

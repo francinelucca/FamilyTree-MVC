@@ -1,0 +1,84 @@
+﻿@model FamilyTree2.DATA.Persona
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Persona</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayName("First Name")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Last Name")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BirthDay)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.birthdayString)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Gender)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.gender_desc)
+        </dd>
+
+    </dl>
+</div>
+
+<h4>Relatives</h4>
+
+<p>
+    @Html.ActionLink("Add Relative", "Create", "Relatives", new { personaId = Model.id }, null)
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayName("Relative")
+        </th>
+        <th>
+            @Html.DisplayName("Relationship")
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model.Relatives)
+    {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.RelatedTo.fullName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Relationship.Relationship1)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit","Relatives", new { id = item.id }, null) |
+            @Html.ActionLink("Delete", "Delete","Relatives", new { id = item.id }, null)
+        </td>
+    </tr>
+    }
+
+</table>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
